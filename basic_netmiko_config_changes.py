@@ -98,7 +98,7 @@ print(output)
 
 print(f"\n===== Connecting to {hostname2} ({c8k52_ip}) =====")
 
-# Config file must exist in same directory:
+# Config file must exist in the same directory:
 # r52_eigrp.cfg
 #
 # Contents:
