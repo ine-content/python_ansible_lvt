@@ -3,7 +3,6 @@
 # ----------------------------------------------
 
 from netmiko import ConnectHandler
-from getpass import getpass
 
 #----------------------------------------------
 # Variables
@@ -15,8 +14,8 @@ hostname2 = "C8K-R52"
 c8k51_ip = "10.0.0.51"
 c8k52_ip = "10.0.0.52"
 
-username = input("Enter your Username: ")
-password = getpass("Enter your Password: ")
+username = "admin"
+password = "C1sc0123!"
 
 command1 = "show ip interface brief"
 command2 = "show ip route"
