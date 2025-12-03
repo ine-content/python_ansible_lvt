@@ -22,39 +22,6 @@ device_ips = ["10.0.0.51", "10.0.0.52"]
 
 commands = ["show ip interface brief", "show ip route"]
 
-devices_dict = {
-    "device1": {
-        "device_type": "cisco_ios", 
-        "ip": c8k51_ip, 
-        "hostname": hostname1, 
-        "username": username, 
-        "password": password
-    },
-    "device2": {
-        "device_type": "cisco_ios", 
-        "ip": c8k52_ip, 
-        "hostname": hostname2, 
-        "username": username, 
-        "password": password
-    }
-}
-
-devices_list = [
-    {
-        "device_type": "cisco_ios",
-        "ip": c8k51_ip, 
-        "hostname": hostname1, 
-        "username": username, 
-        "password": password
-        }, 
-        {
-            "device_type": "cisco_ios", 
-            "ip": c8k52_ip, 
-            "hostname": hostname2, 
-            "username": username, 
-            "password": password
-        }
-]
 
 
 # ----------------------------------------------

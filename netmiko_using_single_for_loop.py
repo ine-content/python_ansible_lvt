@@ -28,6 +28,7 @@ commands = ["show ip interface brief", "show ip route"]
 # Import Modules
 # ----------------------------------------------
 
+from netmiko import ConnectHandler
 
 # ----------------------------------------------
 # Build per-device connection info from variables
@@ -35,23 +36,28 @@ commands = ["show ip interface brief", "show ip route"]
 # ----------------------------------------------
 
 c8k51 = {
+    "device_type": device_type,
+    "host": c8k51_ip,
+    "username": username,
+    "password": password
 }
 
 c8k52 = {
+    "device_type": device_type,
+    "host": c8k52_ip,
+    "username": username,
+    "password": password
 }
 
+# List of device objects with hostname for printing
+devices = [
+    {"hostname": hostname1, "ip": c8k51_ip, "info": c8k51},
+    {"hostname": hostname2, "ip": c8k52_ip, "info": c8k52}
+]
 
-# ----------------------------------------------
-# Connect to Router 51 without 'with' statement
-# ----------------------------------------------
-
-print(f"\n===== Connecting to {hostname1} ({c8k51_ip}) =====")
-
-# ----------------------------------------------
-# Connect to Router 52 using 'with' statement
-# ----------------------------------------------
-
-print(f"\n===== Connecting to {hostname2} ({c8k52_ip}) =====")
+# ------------------------------------------------------
+# Connect to Routers using For Loop and 'with' statement
+# ------------------------------------------------------
 
 
 
