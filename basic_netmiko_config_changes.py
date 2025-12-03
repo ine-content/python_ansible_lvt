@@ -1,0 +1,108 @@
+#----------------------------------------------
+# Variables
+#----------------------------------------------
+
+hostname1 = "C8K-R51"
+hostname2 = "C8K-R52"
+
+c8k51_ip = "10.0.0.51"
+c8k52_ip = "10.0.0.52"
+
+username = "admin"
+password = "C1sc0123!"
+
+command1 = "show ip interface brief"
+command2 = "show ip route"
+
+device_type = "cisco_ios"
+
+eigrp_as = 100
+
+device_ips = ["10.0.0.51", "10.0.0.52"]
+
+commands = ["show ip interface brief", "show ip route"]
+
+devices_dict = {
+    "device1": {
+        "device_type": "cisco_ios", 
+        "ip": c8k51_ip, 
+        "hostname": hostname1, 
+        "username": username, 
+        "password": password
+    },
+    "device2": {
+        "device_type": "cisco_ios", 
+        "ip": c8k52_ip, 
+        "hostname": hostname2, 
+        "username": username, 
+        "password": password
+    }
+}
+
+devices_list = [
+    {
+        "device_type": "cisco_ios",
+        "ip": c8k51_ip, 
+        "hostname": hostname1, 
+        "username": username, 
+        "password": password
+        }, 
+        {
+            "device_type": "cisco_ios", 
+            "ip": c8k52_ip, 
+            "hostname": hostname2, 
+            "username": username, 
+            "password": password
+        }
+]
+
+
+# ----------------------------------------------
+# Import Modules
+# ----------------------------------------------
+
+
+
+# ----------------------------------------------
+# Build per-device connection info from variables
+# (ConnectHandler requires Dictionary)
+# ----------------------------------------------
+
+c8k51 = {
+}
+
+c8k52 = {
+}
+
+
+# ----------------------------------------------
+# Connect to Router 51 without 'with' statement
+# ----------------------------------------------
+
+print(f"\n===== Connecting to {hostname1} ({c8k51_ip}) =====")
+
+# Build config set for R51
+r51_config = [
+]
+
+# Connect and send config
+
+print("\n>>> Sending EIGRP config to R51...")
+print(output)
+
+
+
+# ----------------------------------------------
+# Connect to Router 52 using 'with' statement
+# ----------------------------------------------
+
+print(f"\n===== Connecting to {hostname2} ({c8k52_ip}) =====")
+
+# Config file must exist in same directory:
+# r52_eigrp.cfg
+#
+# Contents:
+# router eigrp 100
+# network 10.0.0.0 0.0.0.255
+
+
