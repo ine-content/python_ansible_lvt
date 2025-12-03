@@ -75,14 +75,14 @@ c8k52 = {
 
 
 # ----------------------------------------------
-# Connect to Router 51
+# Connect to Router 51 without 'with' statement
 # ----------------------------------------------
 
-print(f"\n=== Connecting to {hostname1} ({c8k51_ip}) ===")
+print(f"\n===== Connecting to {hostname1} ({c8k51_ip}) =====")
 
 # ----------------------------------------------
-# Connect to Router 52
+# Connect to Router 52 using 'with' statement
 # ----------------------------------------------
 
-print(f"\n=== Connecting to {hostname2} ({c8k52_ip}) ===")
+print(f"\n===== Connecting to {hostname2} ({c8k52_ip}) =====")
 
