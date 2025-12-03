@@ -1,3 +1,10 @@
+# ----------------------------------------------
+# Import Modules
+# ----------------------------------------------
+
+from netmiko import ConnectHandler
+from getpass import getpass
+
 #----------------------------------------------
 # Variables
 #----------------------------------------------
@@ -8,8 +15,8 @@ hostname2 = "C8K-R52"
 c8k51_ip = "10.0.0.51"
 c8k52_ip = "10.0.0.52"
 
-username = "admin"
-password = "C1sc0123!"
+username = input("Enter your Username: ")
+password = getpass("Enter your Password: ")
 
 command1 = "show ip interface brief"
 command2 = "show ip route"
@@ -22,13 +29,6 @@ device_ips = ["10.0.0.51", "10.0.0.52"]
 
 commands = ["show ip interface brief", "show ip route"]
 
-
-
-# ----------------------------------------------
-# Import Modules
-# ----------------------------------------------
-
-from netmiko import ConnectHandler
 
 # ----------------------------------------------
 # Build per-device connection info from variables
