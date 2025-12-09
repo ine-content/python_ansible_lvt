@@ -1,0 +1,9 @@
+devices:
+  - hostname: C8K-R51
+    host: 10.0.0.51
+    device_type: cisco_ios
+
+  - hostname: C8K-R52
+    host: 10.0.0.52
+    device_type: cisco_ios
+
