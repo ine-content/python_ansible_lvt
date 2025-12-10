@@ -6,11 +6,11 @@ from getpass import getpass
 try:
     # When imported as: from tools.config_utils import push_config
     from .inventory_utils import load_devices_from_yaml
-    from .cisco_data_fetchers import get_netmiko_connection
+    from .connect_utils import get_netmiko_connection
 except ImportError:
     # When running inside tools/: python config_utils.py
     from inventory_utils import load_devices_from_yaml
-    from cisco_data_fetchers import get_netmiko_connection
+    from connect_utils import get_netmiko_connection
 
 def push_config(device, config_lines, username, password):
     """Connect and push config commands using Netmiko connection helper."""
