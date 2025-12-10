@@ -9,17 +9,11 @@ devices = load_devices_from_yaml()
 username = input("Username: ")
 password = getpass.getpass("Password: ")
 
-# Insert credentials into each device
-for d in devices:
-    d["username"] = username
-    d["password"] = password
-
 # Ask user for show command
 cmd = input("Enter show command: ")
 commands = [cmd]  # show_utils expects a list
 
 # Run on every device
 for d in devices:
-    print(f"\n✅Running '{cmd}' on {d['hostname']}...")
-    run_show_commands(d, commands)
-
+    print(f"\n✅ Running '{cmd}' on {d['hostname']}...")
+    run_show_commands(d, commands, username, password)
