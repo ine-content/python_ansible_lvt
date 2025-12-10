@@ -6,11 +6,11 @@ from getpass import getpass
 try:
     # When tools is a package (imported as tools.show_utils)
     from .inventory_utils import load_devices_from_yaml
-    from .cisco_data_fetchers import get_netmiko_connection
+    from .connect_utils import get_netmiko_connection
 except ImportError:
     # When running this file directly from inside tools/
     from inventory_utils import load_devices_from_yaml
-    from cisco_data_fetchers import get_netmiko_connection
+    from connect_utils import get_netmiko_connection
 
 
 def run_show_commands(device, commands, username, password):
