@@ -1,10 +1,13 @@
+# inventory_utils.py
+
 import os
 import yaml
+
 
 def load_devices_from_yaml(filename="devices.yaml"):
     """Load devices from YAML and return the list."""
 
-    # Folder where this file lives (e.g. tools/)
+    # Folder where this file lives
     base = os.path.dirname(__file__)
     path = os.path.join(base, filename)
 
@@ -14,4 +17,3 @@ def load_devices_from_yaml(filename="devices.yaml"):
 
     # devices already have 'host' in YAML
     return data["devices"]
-
