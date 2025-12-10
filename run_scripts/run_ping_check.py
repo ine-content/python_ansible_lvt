@@ -12,3 +12,4 @@ for d in devices:
 # Run ping test
 run_ping_check(ips)
 
+
