@@ -3,6 +3,7 @@ from tools.config_utils import push_config
 import getpass
 import os
 
+# Load devices from YAML
 devices = load_devices_from_yaml()
 
 # Credentials
@@ -26,22 +27,18 @@ if method == "2":
                 if line:
                     config.append(line)
     else:
-        print("❌File not found. Switching to manual entry.")
+        print("❌ File not found. Switching to manual entry.")
         method = "1"
 
 if method == "1":
-    print("\n⭐Enter config (empty line to finish):")
+    print("\n⭐ Enter config (empty line to finish):")
     while True:
         line = input()
         if line == "":
             break
         config.append(line)
 
-# Push config (one loop)
+# Push config to each device
 for d in devices:
-    d["username"] = username
-    d["password"] = password
-
-    print(f"\n✅Pushing config to {d['hostname']}...")
-    push_config(d, config)
-
+    print(f"\n✅ Pushing config to {d['hostname']}...")
+    push_config(d, config, username, password)
